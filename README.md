@@ -1,6 +1,6 @@
 Tools:
 
-[![Docker Image CI](https://github.com/profjordanov/githubcards/actions/workflows/docker-image.yml/badge.svg)](https://github.com/profjordanov/githubcards/actions/workflows/docker-image.yml)
+[![Docker Build&Push](https://github.com/profjordanov/githubcards/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/profjordanov/githubcards/actions/workflows/docker-publish.yml)
 
 [![dockeri.co](https://dockeri.co/image/profjordanov/githubcards)](https://hub.docker.com/r/profjordanov/githubcards)
 
