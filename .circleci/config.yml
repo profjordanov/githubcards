@@ -11,8 +11,8 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: yarn build
-          name: Build app
+          command: npm install
+          name: Install dependencies
       - persist_to_workspace:
           root: ~/project
           paths:
