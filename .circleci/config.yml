@@ -13,9 +13,6 @@ jobs:
       - run:
           command: npm install
           name: Install dependencies
-      - test:
-          command: npm test
-          name: Run tests
       - persist_to_workspace:
           root: ~/project
           paths:
