@@ -10,12 +10,12 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
-      - run:
+      - install:
           command: npm install
           name: Install dependencies
-      - persist_to_workspace:
-          root: ~/project
-          paths:
+      - test:
+          command: npm test
+          name: Run tests
             - .
 workflows:
   on_commit:
@@ -24,7 +24,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "0 0 * * *"      
+          cron: "0 0 * * *"
           filters:
             branches:
               only:
