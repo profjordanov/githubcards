@@ -1,6 +1,6 @@
 [![Docker Build&Push](https://github.com/profjordanov/githubcards/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/profjordanov/githubcards/actions/workflows/docker-publish.yml)
 
-[![dockeri.co](https://dockeri.co/image/profjordanov/githubcards)](https://hub.docker.com/r/profjordanov/githubcards)
+[![docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/r/profjordanov/githubcards)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/profjordanov/githubcards/badge/master)](https://www.codefactor.io/repository/github/profjordanov/githubcards/overview/master)
 
