@@ -1,28 +1,40 @@
-import * as React from "react";
+import React, {useState} from "react";
 import axios from "axios";
 
-class Form extends React.Component {
-    state = { userName: '' };
-    handleSubmit = async (event) => {
-        event.preventDefault();
-        const resp = await axios.get(`https://api.github.com/users/${this.state.userName}`);
-        this.props.onSubmit(resp.data);
-        this.setState({ userName: '' });
-    };
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <input
-                    type="text"
-                    value={this.state.userName}
-                    onChange={event => this.setState({ userName: event.target.value })}
-                    placeholder="GitHub username"
-                    required
-                />
-                <button>Add card</button>
-            </form>
-        );
-    }
-}
+const Form = ({onSubmit}) => {
+    const [userName, setUserName] = useState("");
 
+    const handleChange = (e) => {
+        setUserName(e.currentTarget.value);
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const resp = await axios.get(`https://api.github.com/users/${userName}`);
+        onSubmit(resp.data);
+        setUserName("");
+    };
+
+    return (
+        <>
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label htmlFor="userName">User name</label>
+                    <input
+                        type="text"
+                        value={userName}
+                        onChange={handleChange}
+                        placeholder="GitHub username"
+                        className="form-control"
+                        id="userName"
+                        required
+                    />
+                </div>
+                <br/>
+                <button className="btn btn-primary">Add card</button>
+            </form>
+            <br/>
+        </>
+    );
+}
 export default Form;

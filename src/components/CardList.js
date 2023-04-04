@@ -1,8 +1,8 @@
 import Card from "./Card";
 
-const CardList = (props) => (
-    <div>
-        {props.profiles.map(profile => <Card key={profile.id} {...profile}/>)}
+const CardList = ({profiles}) => (
+    <div className="card-deck">
+        {profiles.map(profile => <Card key={profile.id} profile={profile}/>)}
     </div>
 );
 
